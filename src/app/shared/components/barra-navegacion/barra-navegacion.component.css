@@ -1,0 +1,48 @@
+.barra {
+  --mat-toolbar-container-background-color: #15151f;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  gap: 8px;
+  border-bottom: 1px solid #262636;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 16px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.marca mat-icon { color: var(--mat-sys-primary); }
+.enlaces { display: flex; gap: 4px; }
+.activo { background: rgba(255, 255, 255, 0.08); }
+.espacio { flex: 1; }
+
+.usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.2;
+  margin-right: 8px;
+}
+
+.nombre { font-size: 14px; }
+
+.rol {
+  font-size: 12px;
+  color: var(--mat-sys-tertiary);
+}
+
+.rol-admin { color: var(--mat-sys-primary); }
+
+.barra { backdrop-filter: blur(16px); background: rgba(21, 21, 31, 0.94); }
+.marca { color: #fff; }
+
+
+@media (max-width: 720px) {
+  .texto, .nombre { display: none; }
+  .marca { margin-right: 0; }
+}

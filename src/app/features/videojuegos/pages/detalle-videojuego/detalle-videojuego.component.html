@@ -1,0 +1,48 @@
+<section class="pagina">
+  <a mat-button routerLink="/videojuegos" class="volver">
+    <mat-icon>arrow_back</mat-icon>
+    Volver al catálogo
+  </a>
+
+  @if (estado$ | async; as estado) {
+    @if (estado.cargando) {
+      <app-mensaje-estado tipo="cargando" texto="Cargando videojuego..." />
+    } @else if (estado.error) {
+      <app-mensaje-estado tipo="error" [texto]="estado.error" />
+    } @else if (estado.datos; as videojuego) {
+      <article class="detalle">
+        <img
+          class="portada"
+          [src]="videojuego.imagen"
+          [alt]="'Portada de ' + videojuego.nombre"
+        />
+
+        <div class="informacion">
+          <h1>{{ videojuego.nombre }}</h1>
+
+          <dl>
+            <div><dt>Género</dt><dd>{{ videojuego.genero }}</dd></div>
+            <div><dt>Plataforma</dt><dd>{{ videojuego.plataforma }}</dd></div>
+            <div><dt>Precio</dt><dd class="precio">{{ videojuego.precio | currency: 'USD' }}</dd></div>
+            <div><dt>Lanzamiento</dt><dd>{{ videojuego.fechaLanzamiento | date: 'dd/MM/yyyy' }}</dd></div>
+          </dl>
+
+          <p class="descripcion">{{ videojuego.descripcion }}</p>
+
+          <div class="acciones">
+            <a mat-stroked-button routerLink="/ofertas" [queryParams]="{ titulo: videojuego.nombre }">
+              <mat-icon>local_offer</mat-icon>
+              Buscar ofertas
+            </a>
+            @if (auth.esAdmin()) {
+              <a mat-flat-button [routerLink]="['/videojuegos/editar', videojuego.id]">
+                <mat-icon>edit</mat-icon>
+                Editar
+              </a>
+            }
+          </div>
+        </div>
+      </article>
+    }
+  }
+</section>

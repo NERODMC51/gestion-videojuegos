@@ -1,0 +1,37 @@
+<mat-toolbar class="barra">
+  <a routerLink="/videojuegos" class="marca" aria-label="GameVault, ir al catálogo">
+    <mat-icon>sports_esports</mat-icon>
+    <span class="texto">GameVault</span>
+  </a>
+
+  @if (!auth.esAdmin()) {
+    <nav class="enlaces">
+      <a mat-button routerLink="/videojuegos" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon>grid_view</mat-icon>
+        <span class="texto">Catálogo</span>
+      </a>
+      <a mat-button routerLink="/ofertas" routerLinkActive="activo">
+        <mat-icon>local_offer</mat-icon>
+        <span class="texto">Ofertas</span>
+      </a>
+    </nav>
+  }
+
+  <span class="espacio"></span>
+
+  @if (auth.usuario(); as usuario) {
+    <div class="usuario">
+      <span class="nombre">{{ usuario.nombre }}</span>
+      <span class="rol" [class.rol-admin]="usuario.rol === 'admin'">{{ usuario.rol | titlecase }}</span>
+    </div>
+    <button mat-stroked-button type="button" (click)="auth.cerrarSesion()">
+      <mat-icon>logout</mat-icon>
+      <span class="texto">Cerrar sesión</span>
+    </button>
+  } @else {
+    <a mat-stroked-button routerLink="/login">
+      <mat-icon>person</mat-icon>
+      <span class="texto">Ingresar</span>
+    </a>
+  }
+</mat-toolbar>

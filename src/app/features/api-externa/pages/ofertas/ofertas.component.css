@@ -1,0 +1,29 @@
+.aviso-externo { display: flex; align-items: center; gap: 16px; max-width: 850px; margin-top: 20px; padding: 18px 22px; border: 1px solid rgba(255, 255, 255, .78); border-radius: 18px; background: linear-gradient(120deg, rgba(255,255,255,.075), rgba(255,255,255,.025)); box-shadow: 0 12px 30px rgba(0,0,0,.14); }
+.aviso-externo > mat-icon { width: 30px; height: 30px; color: #c3b5ff; font-size: 30px; }
+.aviso-externo p { display: grid; gap: 5px; margin: 0; line-height: 1.45; }
+.aviso-externo strong { color: #fff; font-size: 17px; }
+.aviso-externo span { color: #c8c6d1; font-size: 15px; }
+.busqueda { display: flex; align-items: flex-start; gap: 12px; margin-top: 28px; }
+.campo { flex: 1; }
+
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.oferta { overflow: hidden; display: flex; flex-direction: column; }
+.oferta img { width: 100%; aspect-ratio: 460 / 215; object-fit: cover; background: #1a1a26; }
+mat-card-header { padding-top: 16px; }
+mat-card-content { display: flex; align-items: baseline; gap: 10px; flex: 1; }
+.precio { font-weight: 700; color: var(--mat-sys-tertiary); }
+.anterior { text-decoration: line-through; color: var(--mat-sys-on-surface-variant); font-size: 14px; }
+.ahorro { margin-left: auto; padding: 2px 8px; border-radius: 6px; background: #24203a; color: var(--mat-sys-primary); font-size: 13px; }
+mat-card-actions { padding: 8px 16px 16px; }
+
+@media (max-width: 600px) {
+  .aviso-externo { align-items: flex-start; gap: 12px; padding: 16px; border-radius: 14px; }
+  .aviso-externo > mat-icon { width: 24px; height: 24px; font-size: 24px; }
+  .aviso-externo span { font-size: 14px; }
+  .busqueda { margin-top: 22px; }
+}

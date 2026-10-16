@@ -1,0 +1,39 @@
+<mat-card appearance="outlined" class="tarjeta">
+  @if (videojuego().imagen && !imagenFallida()) {
+    <img
+      class="portada"
+      [src]="videojuego().imagen"
+      [alt]="'Portada de ' + videojuego().nombre"
+      loading="lazy"
+      (error)="imagenFallida.set(true)"
+    />
+  } @else {
+    <div class="portada sin-imagen"><mat-icon>image_not_supported</mat-icon></div>
+  }
+
+  <mat-card-header>
+    <mat-card-title>{{ videojuego().nombre }}</mat-card-title>
+    <mat-card-subtitle>{{ videojuego().genero }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="datos">
+      <span class="plataforma">{{ videojuego().plataforma }}</span>
+      <span class="precio">{{ videojuego().precio | currency: 'USD' }}</span>
+    </div>
+    <p class="descripcion">{{ videojuego().descripcion | resumen: 90 }}</p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-flat-button type="button" (click)="ver.emit(videojuego())">Ver detalles</button>
+    @if (esAdmin()) {
+      <span class="espacio"></span>
+      <button mat-icon-button type="button" aria-label="Editar videojuego" (click)="editar.emit(videojuego())">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button type="button" aria-label="Eliminar videojuego" (click)="eliminar.emit(videojuego())">
+        <mat-icon>delete</mat-icon>
+      </button>
+    }
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,29 @@
+.volver { margin-bottom: 16px; }
+
+.detalle {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.portada {
+  width: 100%;
+  border-radius: 12px;
+  aspect-ratio: 460 / 215;
+  object-fit: cover;
+  background: #1a1a26;
+}
+
+h1 { margin: 0 0 16px; font: var(--mat-sys-headline-large); }
+
+dl { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; margin: 0 0 16px; }
+dt { font-size: 13px; color: var(--mat-sys-on-surface-variant); }
+dd { margin: 2px 0 0; font-size: 16px; }
+.precio { font-weight: 700; color: var(--mat-sys-tertiary); }
+.descripcion { max-width: 65ch; line-height: 1.6; }
+.acciones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+
+@media (max-width: 800px) {
+  .detalle { grid-template-columns: 1fr; }
+}

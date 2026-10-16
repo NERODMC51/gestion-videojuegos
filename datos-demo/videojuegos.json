@@ -1,0 +1,74 @@
+[
+  {
+    "nombre": "Cyberpunk 2077",
+    "genero": "RPG",
+    "plataforma": "PC",
+    "precio": 59.99,
+    "imagen": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
+    "descripcion": "Rol de acción en mundo abierto ambientado en Night City, una metrópolis obsesionada con el poder y la modificación corporal.",
+    "fechaLanzamiento": "2020-12-10"
+  },
+  {
+    "nombre": "The Witcher 3: Wild Hunt",
+    "genero": "RPG",
+    "plataforma": "Xbox",
+    "precio": 39.99,
+    "imagen": "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg",
+    "descripcion": "Encarná a Geralt de Rivia, un cazador de monstruos, y recorrí un enorme mundo abierto lleno de misiones y decisiones.",
+    "fechaLanzamiento": "2015-05-19"
+  },
+  {
+    "nombre": "Elden Ring",
+    "genero": "Acción",
+    "plataforma": "PlayStation",
+    "precio": 59.99,
+    "imagen": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg",
+    "descripcion": "Aventura de acción y rol en un mundo abierto desafiante, con combates exigentes y exploración libre.",
+    "fechaLanzamiento": "2022-02-25"
+  },
+  {
+    "nombre": "Hades",
+    "genero": "Indie",
+    "plataforma": "Nintendo Switch",
+    "precio": 24.99,
+    "imagen": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg",
+    "descripcion": "Juego de acción tipo roguelike en el que escapás del inframundo griego con combates rápidos y mucha rejugabilidad.",
+    "fechaLanzamiento": "2020-09-17"
+  },
+  {
+    "nombre": "Stardew Valley",
+    "genero": "Simulación",
+    "plataforma": "PC",
+    "precio": 14.99,
+    "imagen": "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/header.jpg",
+    "descripcion": "Heredás una granja abandonada: cultivá, criá animales, pescá y conocé a los habitantes del pueblo a tu ritmo.",
+    "fechaLanzamiento": "2016-02-26"
+  },
+  {
+    "nombre": "Hollow Knight",
+    "genero": "Plataformas",
+    "plataforma": "Nintendo Switch",
+    "precio": 14.99,
+    "imagen": "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/header.jpg",
+    "descripcion": "Aventura de exploración en 2D por un reino subterráneo de insectos y ruinas, con jefes difíciles y arte dibujado a mano.",
+    "fechaLanzamiento": "2017-02-24"
+  },
+  {
+    "nombre": "Celeste",
+    "genero": "Plataformas",
+    "plataforma": "PlayStation",
+    "precio": 19.99,
+    "imagen": "https://cdn.cloudflare.steamstatic.com/steam/apps/504230/header.jpg",
+    "descripcion": "Plataformas de precisión en el que ayudás a Madeline a escalar una montaña, con una historia sobre superación personal.",
+    "fechaLanzamiento": "2018-01-25"
+  },
+  {
+    "nombre": "Portal 2",
+    "genero": "Aventura",
+    "plataforma": "PC",
+    "precio": 9.99,
+    "imagen": "https://cdn.cloudflare.steamstatic.com/steam/apps/620/header.jpg",
+    "descripcion": "Juego de puzles en primera persona basado en portales, con cooperativo para dos jugadores y mucho humor.",
+    "fechaLanzamiento": "2011-04-19"
+  }
+]

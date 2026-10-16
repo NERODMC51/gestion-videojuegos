@@ -1,0 +1,48 @@
+<section class="pagina carrito-pagina">
+  <header class="cabecera-pagina">
+    <div>
+      <p class="sobretitulo">TU SELECCIÓN</p>
+      <h1>Carrito de compras</h1>
+      <p>Revisá tus títulos antes de continuar.</p>
+    </div>
+    <a mat-button routerLink="/videojuegos"><mat-icon>arrow_back</mat-icon> Seguir explorando</a>
+  </header>
+
+  @if (carrito.lineas().length === 0) {
+    <div class="vacio">
+      <mat-icon>shopping_bag</mat-icon>
+      <h2>Tu carrito está vacío</h2>
+      <p>Cuando encuentres un juego que te guste, agregalo y aparecerá acá.</p>
+      <a mat-flat-button routerLink="/videojuegos">Explorar catálogo</a>
+    </div>
+  } @else {
+    <div class="contenido-carrito">
+      <div class="lista">
+        @for (linea of carrito.lineas(); track linea.videojuego.id) {
+          <article class="linea">
+            <img [src]="linea.videojuego.imagen" [alt]="'Portada de ' + linea.videojuego.nombre" />
+            <div class="datos">
+              <span class="genero">{{ linea.videojuego.genero }} · {{ linea.videojuego.plataforma }}</span>
+              <h2>{{ linea.videojuego.nombre }}</h2>
+              <span class="precio">{{ linea.videojuego.precio | currency: 'USD' }}</span>
+            </div>
+            <div class="cantidad">
+              <button mat-icon-button aria-label="Quitar una unidad" (click)="carrito.cambiarCantidad(linea.videojuego.id, linea.cantidad - 1)"><mat-icon>remove</mat-icon></button>
+              <span>{{ linea.cantidad }}</span>
+              <button mat-icon-button aria-label="Agregar una unidad" (click)="carrito.cambiarCantidad(linea.videojuego.id, linea.cantidad + 1)"><mat-icon>add</mat-icon></button>
+            </div>
+            <button mat-icon-button class="quitar" aria-label="Quitar del carrito" (click)="carrito.quitar(linea.videojuego.id)"><mat-icon>delete_outline</mat-icon></button>
+          </article>
+        }
+      </div>
+
+      <aside class="resumen">
+        <h2>Resumen</h2>
+        <div><span>Productos</span><span>{{ carrito.cantidad() }}</span></div>
+        <div class="total"><span>Total</span><strong>{{ carrito.total() | currency: 'USD' }}</strong></div>
+        <p>El inicio de sesión se solicita al continuar con la compra.</p>
+        <button mat-flat-button type="button" (click)="continuar()">Continuar con la compra <mat-icon>arrow_forward</mat-icon></button>
+      </aside>
+    </div>
+  }
+</section>

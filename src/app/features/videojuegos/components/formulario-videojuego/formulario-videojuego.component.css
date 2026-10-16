@@ -1,0 +1,12 @@
+.formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+}
+
+.completo { grid-column: 1 / -1; }
+.botones { display: flex; justify-content: flex-end; gap: 12px; }
+
+@media (max-width: 640px) {
+  .formulario { grid-template-columns: 1fr; }
+}

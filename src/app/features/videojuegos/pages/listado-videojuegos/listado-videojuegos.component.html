@@ -1,0 +1,128 @@
+<section class="pagina">
+  <section class="promocion" aria-label="Destacados de GameVault">
+    <div class="promocion-ventana">
+      <div
+        class="promocion-pista"
+        [class.pista-una]="diapositivasInicio().length === 1"
+        [class.pista-dos]="diapositivasInicio().length === 2"
+      >
+        @for (slide of diapositivasInicio(); track slide.id; let indice = $index) {
+        <article class="promocion-slide" [class.slide-aventura]="slide.id === 'aventura'" [class.slide-accion]="slide.id === 'accion'" [class.slide-ofertas]="slide.id === 'ofertas'">
+          <div class="promo-contenido">
+            <span class="promo-etiqueta">
+              <mat-icon>{{ slide.id === 'aventura' ? 'auto_awesome' : slide.id === 'accion' ? 'sports_esports' : 'local_offer' }}</mat-icon>
+              {{ slide.etiqueta }}
+            </span>
+            <h1>{{ slide.titulo }}</h1>
+            <p>{{ slide.descripcion }}</p>
+            @if (slide.id === 'ofertas') {
+              <a class="promo-boton" routerLink="/ofertas">{{ slide.textoBoton }} <mat-icon>arrow_forward</mat-icon></a>
+            } @else {
+              <a class="promo-boton" href="#catalogo">{{ slide.textoBoton }} <mat-icon>arrow_downward</mat-icon></a>
+            }
+          </div>
+          <span class="promo-numero">{{ contadorPromo(indice, diapositivasInicio().length) }}</span>
+        </article>
+        }
+      </div>
+      @if (diapositivasInicio().length > 1) {
+        <div class="promo-progreso" aria-hidden="true">
+          @for (slide of diapositivasInicio(); track slide.id) { <span></span> }
+        </div>
+      }
+    </div>
+  </section>
+
+  <header class="cabecera-pagina">
+    <div>
+      <h2>Catálogo de videojuegos</h2>
+      @if (usaRecomendaciones()) {
+        <p>Explorá una selección variada y consultá dónde encontrar cada juego.</p>
+      } @else {
+        <p>Explorá y armá tu colección. Mostrando {{ filtrados().length }} de {{ estado().datos?.length ?? 0 }} títulos.</p>
+      }
+    </div>
+    @if (auth.esAdmin()) {
+      <a mat-flat-button routerLink="/videojuegos/nuevo">
+        <mat-icon>add</mat-icon>
+        Agregar videojuego
+      </a>
+    }
+  </header>
+
+  <div class="filtros" id="catalogo">
+    <mat-form-field appearance="outline" class="campo-busqueda">
+      <mat-label>Buscar por nombre</mat-label>
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput [ngModel]="busqueda()" (ngModelChange)="busqueda.set($event)" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Género</mat-label>
+      <mat-select [ngModel]="generoElegido()" (ngModelChange)="generoElegido.set($event)">
+        <mat-option value="">Todos</mat-option>
+        @for (genero of generos; track genero) {
+          <mat-option [value]="genero">{{ genero }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Plataforma</mat-label>
+      <mat-select [ngModel]="plataformaElegida()" (ngModelChange)="plataformaElegida.set($event)">
+        <mat-option value="">Todas</mat-option>
+        @for (plataforma of plataformas; track plataforma) {
+          <mat-option [value]="plataforma">{{ plataforma }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    @if (hayFiltros()) {
+      <button mat-button type="button" (click)="limpiarFiltros()">Limpiar filtros</button>
+    }
+  </div>
+
+  @if (estado().cargando) {
+    <app-mensaje-estado tipo="cargando" texto="Cargando videojuegos..." />
+  } @else if (estado().error) {
+    <app-mensaje-estado tipo="error" [texto]="estado().error!" [conReintento]="true" (reintentar)="recargar()" />
+  } @else if (filtrados().length === 0) {
+    <app-mensaje-estado
+      tipo="vacio"
+      [texto]="hayFiltros() ? 'Ningún videojuego coincide con los filtros elegidos.' : 'Todavía no hay videojuegos en el catálogo.'"
+    />
+  } @else if (usaRecomendaciones()) {
+    <section class="seleccion-recomendada">
+      <header class="seleccion-cabecera">
+        <div><span class="seleccion-etiqueta">PARA DESCUBRIR</span><h2>Ideas para tu próxima partida</h2><p>Una selección variada y filtrable con enlaces a ofertas externas.</p></div>
+        <a mat-stroked-button routerLink="/ofertas"><mat-icon>open_in_new</mat-icon> Ver ofertas externas</a>
+      </header>
+      <div class="grilla recomendaciones">
+        @for (juego of filtrados(); track juego.id) {
+          <article class="recomendacion">
+            <img [src]="juego.imagen" [alt]="'Portada de ' + juego.nombre" loading="lazy" />
+            <div class="recomendacion-contenido">
+              <div class="recomendacion-meta"><span>{{ juego.genero }}</span><span>{{ juego.plataforma }}</span></div>
+              <h3>{{ juego.nombre }}</h3>
+              <p>{{ juego.descripcion }}</p>
+              <a mat-button [routerLink]="['/ofertas']" [queryParams]="{ titulo: juego.nombre }">Consultar opciones de compra <mat-icon iconPositionEnd>arrow_forward</mat-icon></a>
+            </div>
+          </article>
+        }
+      </div>
+      <p class="nota-demo">Selección de ejemplo. El catálogo principal se carga desde MockAPI.</p>
+    </section>
+  } @else {
+    <div class="grilla">
+      @for (videojuego of filtrados(); track videojuego.id) {
+        <app-tarjeta-videojuego
+          [videojuego]="videojuego"
+          [esAdmin]="auth.esAdmin()"
+          (ver)="verDetalle($event)"
+          (editar)="editar($event)"
+          (eliminar)="eliminar($event)"
+        />
+      }
+    </div>
+  }
+</section>

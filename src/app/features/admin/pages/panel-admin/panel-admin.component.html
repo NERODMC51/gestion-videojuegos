@@ -1,0 +1,113 @@
+<div class="admin-layout">
+  <main class="admin-contenido pagina panel-pagina">
+    <header class="encabezado-admin">
+      <div>
+        <p class="sobretitulo">GAMEVAULT · ADMINISTRACIÓN</p>
+        <h1>Gestión de la tienda</h1>
+        <p>Hola, {{ auth.usuario()?.nombre }}. Desde acá podés mantener el catálogo al día.</p>
+      </div>
+      <div class="acciones-encabezado">
+        @if (actualizadoA()) {
+          <span class="marca-actualizacion"><mat-icon>check_circle</mat-icon> Actualizado {{ actualizadoA() }}</span>
+        }
+        <button mat-stroked-button type="button" (click)="actualizar()" [disabled]="actualizando()" aria-label="Actualizar datos del catálogo">
+          <mat-icon [class.girando]="actualizando()">refresh</mat-icon>
+          {{ actualizando() ? 'Actualizando…' : 'Actualizar' }}
+        </button>
+      </div>
+    </header>
+
+    @if (estado$ | async; as estado) {
+      <section class="metricas">
+        <article class="metrica">
+          <span class="icono"><mat-icon>visibility</mat-icon></span>
+          <div><span class="etiqueta">Visitas registradas</span><strong>{{ visitas.total() }}</strong><small>Sesiones en este navegador</small></div>
+        </article>
+        <a class="atajo-nuevo" routerLink="/videojuegos/nuevo"><span class="atajo-icono"><mat-icon>add</mat-icon></span><span><strong>Agregar un título</strong><small>Sumá un videojuego al catálogo</small></span><mat-icon class="atajo-flecha">arrow_forward</mat-icon></a>
+      </section>
+
+      <section class="gestion gestion-portada" aria-labelledby="titulo-portada">
+        <header>
+          <div>
+            <span class="etiqueta-seccion">CONTENIDO DEL INICIO</span>
+            <h2 id="titulo-portada">Diapositivas destacadas</h2>
+            <p>Elegí cuáles mostrar y editá sus textos. Debe quedar al menos una visible.</p>
+          </div>
+          <span class="contador-diapositivas">{{ visibles() }} visibles de {{ contenidoInicio.diapositivas().length }}</span>
+        </header>
+        <div class="editor-diapositivas">
+          @for (slide of contenidoInicio.diapositivas(); track slide.id; let indice = $index) {
+            <article class="editor-diapositiva" [class.diapositiva-oculta]="!slide.visible">
+              <div class="editor-diapositiva-cabecera">
+                <h3>Diapositiva {{ indice + 1 }}</h3>
+                <mat-checkbox
+                  [checked]="slide.visible"
+                  [disabled]="slide.visible && visibles() === 1"
+                  (change)="cambiarDiapositiva(slide.id, { visible: $event.checked })"
+                  [aria-label]="(slide.visible ? 'Ocultar' : 'Mostrar') + ' diapositiva ' + (indice + 1)"
+                >
+                  Mostrar en portada
+                </mat-checkbox>
+              </div>
+              <div class="campos-diapositiva">
+                <mat-form-field appearance="outline">
+                  <mat-label>Etiqueta superior</mat-label>
+                  <input matInput maxlength="54" [ngModel]="slide.etiqueta" (ngModelChange)="cambiarDiapositiva(slide.id, { etiqueta: $event })" />
+                  <mat-hint align="end">{{ slide.etiqueta.length }}/54</mat-hint>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Título principal</mat-label>
+                  <input matInput maxlength="90" [ngModel]="slide.titulo" (ngModelChange)="cambiarDiapositiva(slide.id, { titulo: $event })" />
+                  <mat-hint align="end">{{ slide.titulo.length }}/90</mat-hint>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="campo-descripcion">
+                  <mat-label>Descripción</mat-label>
+                  <textarea matInput rows="2" maxlength="180" [ngModel]="slide.descripcion" (ngModelChange)="cambiarDiapositiva(slide.id, { descripcion: $event })"></textarea>
+                  <mat-hint align="end">{{ slide.descripcion.length }}/180</mat-hint>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Texto del botón</mat-label>
+                  <input matInput maxlength="32" [ngModel]="slide.textoBoton" (ngModelChange)="cambiarDiapositiva(slide.id, { textoBoton: $event })" />
+                  <mat-hint align="end">{{ slide.textoBoton.length }}/32</mat-hint>
+                </mat-form-field>
+              </div>
+            </article>
+          }
+        </div>
+        <footer class="pie-editor-portada">
+          <p class="nota-local">Los cambios se guardan en este navegador y se muestran al volver al catálogo.</p>
+          <div class="acciones-portada">
+            <span role="status" aria-live="polite">{{ mensajeContenido() }}</span>
+            <button mat-button type="button" (click)="restaurarContenido()">Restaurar textos iniciales</button>
+            <button mat-flat-button type="button" (click)="guardarContenido()" [disabled]="!contenidoInicio.hayCambiosPendientes()">
+              <mat-icon>save</mat-icon> Guardar cambios
+            </button>
+          </div>
+        </footer>
+      </section>
+
+      <section class="gestion">
+        <header><div><span class="etiqueta-seccion">INVENTARIO</span><h2>Catálogo editable</h2><p>Actualizá la información de los títulos publicados.</p></div><a mat-button routerLink="/videojuegos">Abrir catálogo <mat-icon>arrow_forward</mat-icon></a></header>
+        @if (estado.cargando) {
+          <app-mensaje-estado tipo="cargando" texto="Cargando catálogo..." />
+        } @else if (estado.error) {
+          <app-mensaje-estado tipo="error" [texto]="estado.error" />
+        } @else if (estado.datos?.length) {
+          <div class="tabla">
+            <div class="fila cabecera"><span>Videojuego</span><span>Género</span><span>Plataforma</span><span>Precio</span><span>Acción</span></div>
+            @for (juego of estado.datos; track juego.id) {
+              <div class="fila">
+                <span class="nombre-juego"><img [src]="juego.imagen" [alt]="''" />{{ juego.nombre }}</span>
+                <span>{{ juego.genero }}</span><span>{{ juego.plataforma }}</span>
+                <span>{{ juego.precio | currency: 'USD' }}</span>
+                <a mat-icon-button [routerLink]="rutaEdicion(juego)" [attr.aria-label]="'Editar ' + juego.nombre"><mat-icon>edit</mat-icon></a>
+              </div>
+            }
+          </div>
+        } @else {
+          <div class="vacio"><span class="vacio-icono"><mat-icon>inventory_2</mat-icon></span><h3>El catálogo todavía está vacío</h3><p>Agregá el primer título para empezar a completar la tienda.</p><a mat-flat-button routerLink="/videojuegos/nuevo"><mat-icon>add</mat-icon> Agregar videojuego</a></div>
+        }
+      </section>
+    }
+  </main>
+</div>

@@ -1,0 +1,75 @@
+<section class="pantalla-auth">
+  <mat-card appearance="outlined" class="tarjeta-auth">
+    <mat-card-header>
+      <mat-icon class="logo-auth">person_add</mat-icon>
+      <mat-card-title>Crear cuenta</mat-card-title>
+      <mat-card-subtitle>Vas a poder ver el catálogo y los detalles</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="formulario" (ngSubmit)="registrar()" class="formulario-auth" novalidate>
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre y apellido</mat-label>
+          <input matInput formControlName="nombre" autocomplete="name" />
+          <mat-error>{{ error('nombre') }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre de usuario</mat-label>
+          <input matInput formControlName="nombreUsuario" autocomplete="username" />
+          <mat-hint>Letras, números o guion bajo. Entre 3 y 20 caracteres.</mat-hint>
+          <mat-error>{{ error('nombreUsuario') }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" formControlName="clave" autocomplete="new-password" />
+          <mat-hint>Mínimo 8 caracteres.</mat-hint>
+          <mat-error>{{ error('clave') }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Repetir contraseña</mat-label>
+          <input
+            matInput
+            type="password"
+            formControlName="confirmar"
+            autocomplete="new-password"
+            [errorStateMatcher]="matcher"
+          />
+          <mat-error>{{ errorConfirmacion() }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Pregunta secreta</mat-label>
+          <mat-select formControlName="preguntaSecreta">
+            @for (pregunta of preguntas; track pregunta) {
+              <mat-option [value]="pregunta">{{ pregunta }}</mat-option>
+            }
+          </mat-select>
+          <mat-hint>Te va a servir para recuperar tu contraseña.</mat-hint>
+          <mat-error>{{ error('preguntaSecreta') }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Respuesta</mat-label>
+          <input matInput formControlName="respuesta" autocomplete="off" />
+          <mat-error>{{ error('respuesta') }}</mat-error>
+        </mat-form-field>
+
+        @if (errorRegistro()) {
+          <p class="error-auth" role="alert">{{ errorRegistro() }}</p>
+        }
+
+        <button mat-flat-button type="submit" [disabled]="cargando()">
+          {{ cargando() ? 'Creando cuenta...' : 'Crear cuenta' }}
+        </button>
+      </form>
+
+      <div class="enlaces-auth">
+        <span>¿Ya tenés cuenta?</span>
+        <a routerLink="/login">Iniciar sesión</a>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</section>

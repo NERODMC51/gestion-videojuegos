@@ -1,0 +1,12 @@
+.demo {
+  margin-top: 24px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #343245;
+  background: linear-gradient(145deg, #211f30, #171720);
+  font-size: 14px;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.demo p { margin: 0 0 4px; }
+.demo ul { margin: 0 0 8px; padding-left: 18px; }

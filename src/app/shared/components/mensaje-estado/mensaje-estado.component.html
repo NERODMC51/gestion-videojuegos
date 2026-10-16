@@ -1,0 +1,22 @@
+<div class="estado" [class.error]="tipo() === 'error'" [attr.role]="tipo() === 'error' ? 'alert' : 'status'">
+  @switch (tipo()) {
+    @case ('cargando') {
+      <mat-spinner diameter="40" />
+      <p>{{ texto() || 'Cargando...' }}</p>
+    }
+    @case ('error') {
+      <mat-icon>error_outline</mat-icon>
+      <p>{{ texto() }}</p>
+      @if (conReintento()) {
+        <button mat-stroked-button type="button" (click)="reintentar.emit()">
+          <mat-icon>refresh</mat-icon>
+          Reintentar
+        </button>
+      }
+    }
+    @case ('vacio') {
+      <mat-icon>inbox</mat-icon>
+      <p>{{ texto() }}</p>
+    }
+  }
+</div>

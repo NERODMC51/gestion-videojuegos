@@ -1,0 +1,36 @@
+<section class="pagina checkout-pagina">
+  <header class="cabecera-pagina">
+    <div>
+      <p class="sobretitulo">ÚLTIMO PASO</p>
+      <h1>Finalizar compra</h1>
+      <p>Sesión iniciada como {{ auth.usuario()?.nombre }}.</p>
+    </div>
+    <a mat-button routerLink="/carrito"><mat-icon>arrow_back</mat-icon> Volver al carrito</a>
+  </header>
+
+  @if (!carrito.lineas().length) {
+    <div class="vacio">
+      <p>No hay productos para comprar.</p>
+      <a mat-flat-button routerLink="/videojuegos">Volver al catálogo</a>
+    </div>
+  } @else {
+    <div class="checkout-grid">
+      <form #datosCompra="ngForm" (ngSubmit)="finalizar()" class="datos-compra">
+        <h2>Datos de entrega</h2>
+        <label>Nombre completo<input name="nombre" [ngModel]="nombre()" (ngModelChange)="nombre.set($event)" required autocomplete="name" /></label>
+        <label>Correo electrónico<input name="email" type="email" [ngModel]="email()" (ngModelChange)="email.set($event)" required autocomplete="email" /></label>
+        <label>Dirección<input name="direccion" [ngModel]="direccion()" (ngModelChange)="direccion.set($event)" required autocomplete="street-address" /></label>
+        <div class="aviso"><mat-icon>info</mat-icon><span>Esta compra es una demostración académica. No se realizará ningún cobro.</span></div>
+        <button mat-flat-button type="submit" [disabled]="datosCompra.invalid">Confirmar compra · {{ carrito.total() | currency: 'USD' }}</button>
+      </form>
+
+      <aside class="resumen">
+        <h2>Tu pedido</h2>
+        @for (linea of carrito.lineas(); track linea.videojuego.id) {
+          <div class="producto"><span>{{ linea.cantidad }} × {{ linea.videojuego.nombre }}</span><strong>{{ linea.videojuego.precio * linea.cantidad | currency: 'USD' }}</strong></div>
+        }
+        <div class="total"><span>Total</span><strong>{{ carrito.total() | currency: 'USD' }}</strong></div>
+      </aside>
+    </div>
+  }
+</section>

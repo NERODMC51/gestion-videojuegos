@@ -1,0 +1,7 @@
+<app-barra-navegacion />
+@if (auth.esAdmin()) {
+  <app-lateral-admin />
+}
+<main>
+  <router-outlet />
+</main>

@@ -1,0 +1,55 @@
+:host { display: block; }
+
+.admin-layout {
+  min-height: calc(100vh - 64px);
+  background: transparent;
+}
+
+.admin-contenido.pagina { width: 100%; max-width: 1360px; box-sizing: border-box; margin: 0 auto; padding: 34px clamp(20px, 4vw, 58px) 64px; }
+.encabezado-admin { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin: 4px 0 30px; }
+.encabezado-admin h1 { margin: 0 0 8px; font-size: clamp(30px, 4vw, 42px); letter-spacing: -.03em; }
+.encabezado-admin p:not(.sobretitulo) { margin: 0; color: #aaa8b8; }
+.sobretitulo { margin: 0 0 9px; color: #aa9aff; font-size: 12px; font-weight: 700; letter-spacing: .14em; }
+.acciones-encabezado { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.marca-actualizacion { display: flex; align-items: center; gap: 6px; color: #a8d8bf; font-size: 12px; }
+.marca-actualizacion mat-icon { width: 17px; height: 17px; font-size: 17px; }
+.girando { animation: girar .8s linear infinite; }
+@keyframes girar { to { transform: rotate(360deg); } }
+.metricas { display: grid; grid-template-columns: minmax(260px, 420px) minmax(280px, 1fr); gap: 18px; margin-bottom: 32px; }
+.metrica { display: flex; gap: 18px; align-items: center; padding: 23px; border: 1px solid #302f40; border-radius: 18px; background: linear-gradient(140deg, #211f30, #171720 80%); }
+.icono { display: grid; width: 52px; height: 52px; flex: none; place-items: center; border-radius: 15px; background: #302b4a; color: #b9aaff; }
+.metrica div { display: grid; gap: 3px; }
+.etiqueta { color: #b8b6c5; font-size: 14px; }
+.metrica strong { font-size: 30px; line-height: 1.15; }
+.metrica small { color: #898797; }
+.atajo-nuevo { display: flex; align-items: center; gap: 16px; min-width: 0; padding: 20px 22px; border: 1px solid #38334e; border-radius: 18px; background: linear-gradient(120deg, rgba(82,65,133,.3), rgba(26,25,38,.94)); }
+.atajo-nuevo > span:nth-child(2) { display: grid; gap: 5px; }
+.atajo-nuevo strong { color: #fff; }
+.atajo-nuevo small { color: #aaa8b8; }
+.atajo-flecha { margin-left: auto; color: #b9aaff; }
+.gestion { overflow: hidden; border: 1px solid #302f40; border-radius: 18px; background: #171720; }
+.gestion > header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 24px; border-bottom: 1px solid #302f40; }
+.gestion h2 { margin: 0 0 5px; font-size: 19px; }
+.gestion header p { margin: 0; color: #9d9baa; font-size: 14px; }
+.etiqueta-seccion { display: block; margin-bottom: 7px; color: #aa9aff; font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+.tabla { overflow-x: auto; }
+.fila { display: grid; grid-template-columns: minmax(220px, 2fr) minmax(90px, 1fr) minmax(125px, 1fr) 100px 72px; min-width: 700px; align-items: center; gap: 14px; min-height: 66px; padding: 0 24px; border-bottom: 1px solid #292835; color: #c5c3d0; font-size: 14px; }
+.fila:last-child { border-bottom: 0; }
+.fila.cabecera { min-height: 46px; color: #8e8c9b; font-size: 12px; font-weight: 700; }
+.nombre-juego { display: flex; align-items: center; gap: 12px; color: #fff; font-weight: 600; }
+.nombre-juego img { width: 74px; height: 42px; border-radius: 7px; object-fit: cover; background: #242330; }
+.vacio { display: grid; justify-items: center; padding: 48px 24px; color: #aaa8b8; text-align: center; }
+.vacio h3 { margin: 16px 0 5px; color: #f2f0fa; }
+.vacio p { margin: 0 0 20px; }
+
+@media (max-width: 900px) {
+  .metricas { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .admin-contenido.pagina { padding: 26px 14px 44px; }
+  .encabezado-admin { align-items: flex-start; flex-direction: column; }
+  .gestion > header { align-items: flex-start; flex-direction: column; padding: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) { .girando { animation: none; } }

@@ -1,0 +1,73 @@
+<section class="pantalla-auth">
+  <mat-card appearance="outlined" class="tarjeta-auth">
+    <mat-card-header>
+      <mat-icon class="logo-auth">lock_reset</mat-icon>
+      <mat-card-title>Recuperar contraseña</mat-card-title>
+      <mat-card-subtitle>
+        {{ paso() === 1 ? 'Paso 1 de 2: indicá tu usuario' : 'Paso 2 de 2: respondé y elegí una contraseña nueva' }}
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      @if (paso() === 1) {
+        <form [formGroup]="formUsuario" (ngSubmit)="buscarCuenta()" class="formulario-auth" novalidate>
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre de usuario</mat-label>
+            <input matInput formControlName="nombreUsuario" autocomplete="username" />
+            <mat-error>Ingresá tu nombre de usuario.</mat-error>
+          </mat-form-field>
+
+          @if (errorMensaje()) {
+            <p class="error-auth" role="alert">{{ errorMensaje() }}</p>
+          }
+
+          <button mat-flat-button type="submit" [disabled]="cargando()">
+            {{ cargando() ? 'Buscando...' : 'Continuar' }}
+          </button>
+        </form>
+      } @else {
+        <form [formGroup]="formRestablecer" (ngSubmit)="restablecer()" class="formulario-auth" novalidate>
+          <p class="pregunta">{{ pregunta() }}</p>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Tu respuesta</mat-label>
+            <input matInput formControlName="respuesta" autocomplete="off" />
+            <mat-error>{{ error('respuesta') }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Contraseña nueva</mat-label>
+            <input matInput type="password" formControlName="clave" autocomplete="new-password" />
+            <mat-hint>Mínimo 8 caracteres.</mat-hint>
+            <mat-error>{{ error('clave') }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Repetir contraseña nueva</mat-label>
+            <input
+              matInput
+              type="password"
+              formControlName="confirmar"
+              autocomplete="new-password"
+              [errorStateMatcher]="matcher"
+            />
+            <mat-error>{{ errorConfirmacion() }}</mat-error>
+          </mat-form-field>
+
+          @if (errorMensaje()) {
+            <p class="error-auth" role="alert">{{ errorMensaje() }}</p>
+          }
+
+          <button mat-flat-button type="submit" [disabled]="cargando()">
+            {{ cargando() ? 'Guardando...' : 'Guardar contraseña nueva' }}
+          </button>
+          <button mat-button type="button" (click)="volverAlPaso1()">Usar otro usuario</button>
+        </form>
+      }
+
+      <div class="enlaces-auth">
+        <a routerLink="/login">Volver a iniciar sesión</a>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</section>

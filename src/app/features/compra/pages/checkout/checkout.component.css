@@ -1,0 +1,17 @@
+.sobretitulo { margin: 0 0 8px; color: #9c8cff; font-size: 12px; font-weight: 700; letter-spacing: .14em; }
+.checkout-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); gap: 24px; align-items: start; }
+.datos-compra, .resumen { padding: 26px; border: 1px solid #302f40; border-radius: 18px; background: #171720; }
+.datos-compra h2, .resumen h2 { margin: 0 0 22px; }
+.datos-compra label { display: grid; gap: 8px; margin-bottom: 18px; font-size: 14px; font-weight: 600; }
+.datos-compra input { min-height: 48px; padding: 0 14px; border: 1px solid #454356; border-radius: 10px; background: #101017; color: #fff; font: inherit; }
+.datos-compra input:focus { outline: 2px solid #9c8cff; outline-offset: 1px; }
+.aviso { display: flex; gap: 10px; align-items: center; margin: 20px 0; padding: 14px; border-radius: 10px; background: #222033; color: #c5c1d8; font-size: 13px; }
+.aviso mat-icon { flex: none; color: #aa9bff; }
+.datos-compra button { width: 100%; min-height: 48px; }
+.producto, .total { display: flex; justify-content: space-between; gap: 12px; margin: 16px 0; color: #c1bfcd; }
+.producto span { line-height: 1.4; }
+.producto strong { color: #fff; white-space: nowrap; }
+.total { padding-top: 18px; border-top: 1px solid #38364a; color: #fff; font-size: 18px; }
+.total strong { color: #c8baff; }
+.vacio { padding: 45px; border: 1px solid #302f40; border-radius: 18px; text-align: center; }
+@media (max-width: 760px) { .checkout-grid { grid-template-columns: 1fr; } }

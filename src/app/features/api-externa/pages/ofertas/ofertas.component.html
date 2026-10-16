@@ -1,0 +1,58 @@
+<section class="pagina">
+  <header class="cabecera-pagina">
+    <div>
+      <h1>Ofertas de juegos para PC</h1>
+      <div class="aviso-externo">
+        <mat-icon>open_in_new</mat-icon>
+        <p><strong>Ofertas de otra plataforma</strong><span>Estos datos vienen del servicio externo CheapShark. No forman parte del catálogo de GameVault.</span></p>
+      </div>
+    </div>
+  </header>
+
+  <div class="busqueda">
+    <mat-form-field appearance="outline" class="campo">
+      <mat-label>Buscar oferta por título</mat-label>
+      <mat-icon matPrefix>search</mat-icon>
+      <input
+        matInput
+        [ngModel]="titulo()"
+        (ngModelChange)="titulo.set($event)"
+      />
+      <mat-hint>Los resultados se actualizan mientras escribís.</mat-hint>
+    </mat-form-field>
+  </div>
+
+  @if (estado$ | async; as estado) {
+    @if (estado.cargando) {
+      <app-mensaje-estado tipo="cargando" texto="Buscando ofertas..." />
+    } @else if (estado.error) {
+      <app-mensaje-estado tipo="error" [texto]="estado.error" />
+    } @else if (estado.datos; as ofertas) {
+      @if (ofertas.length === 0) {
+        <app-mensaje-estado tipo="vacio" texto="No se encontraron ofertas para esa búsqueda." />
+      } @else {
+        <div class="grilla">
+          @for (oferta of ofertas; track oferta.id) {
+            <mat-card appearance="outlined" class="oferta">
+              <img [src]="oferta.imagen" [alt]="'Imagen de ' + oferta.titulo" loading="lazy" />
+              <mat-card-header>
+                <mat-card-title>{{ oferta.titulo }}</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <span class="precio">{{ oferta.precioOferta | currency: 'USD' }}</span>
+                <span class="anterior">{{ oferta.precioNormal | currency: 'USD' }}</span>
+                <span class="ahorro">-{{ oferta.ahorroPorcentaje }}%</span>
+              </mat-card-content>
+              <mat-card-actions>
+                <a mat-stroked-button [href]="oferta.enlace" target="_blank" rel="noopener noreferrer">
+                  Ver oferta
+                  <mat-icon iconPositionEnd>open_in_new</mat-icon>
+                </a>
+              </mat-card-actions>
+            </mat-card>
+          }
+        </div>
+      }
+    }
+  }
+</section>

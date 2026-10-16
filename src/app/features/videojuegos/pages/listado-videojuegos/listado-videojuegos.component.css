@@ -1,0 +1,82 @@
+.promocion { margin: 0 0 36px; }
+.promocion-ventana { position: relative; height: clamp(330px, 38vw, 450px); overflow: hidden; border: 1px solid rgba(255,255,255,.14); border-radius: 24px; background: #171622; box-shadow: 0 24px 70px rgba(0,0,0,.32); }
+.promocion-pista { display: flex; width: 300%; height: 100%; animation: deslizar-promos 18s infinite; }
+.promocion-ventana:hover .promocion-pista, .promocion-ventana:focus-within .promocion-pista { animation-play-state: paused; }
+.promocion-slide { position: relative; display: flex; flex: 0 0 33.3333%; align-items: center; min-width: 0; padding: clamp(26px, 5vw, 64px); background-position: center, right center; background-size: cover; }
+.slide-aventura { background-image: linear-gradient(90deg, #111019 0%, rgba(17,16,25,.94) 34%, rgba(17,16,25,.56) 65%, rgba(17,16,25,.18) 100%), url('https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg'); }
+.slide-accion { background-image: linear-gradient(90deg, #111019 0%, rgba(17,16,25,.94) 34%, rgba(17,16,25,.56) 65%, rgba(17,16,25,.18) 100%), url('https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg'); }
+.slide-ofertas { background-image: linear-gradient(90deg, #111019 0%, rgba(17,16,25,.94) 34%, rgba(17,16,25,.56) 65%, rgba(17,16,25,.18) 100%), url('https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg'); }
+.promo-contenido { max-width: 660px; }
+.promo-etiqueta { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid rgba(201,190,255,.38); border-radius: 999px; background: rgba(25,23,38,.64); color: #d0c5ff; font-size: 12px; font-weight: 700; letter-spacing: .12em; }
+.promo-etiqueta mat-icon { width: 17px; height: 17px; font-size: 17px; }
+.promo-contenido h1 { margin: 22px 0 12px; color: #fff; font-size: clamp(36px, 5.5vw, 66px); font-weight: 750; letter-spacing: -.045em; line-height: 1.02; }
+.promo-contenido p { max-width: 530px; margin: 0; color: #d1cfda; font-size: clamp(15px, 1.6vw, 18px); line-height: 1.6; }
+.promo-boton { display: inline-flex; align-items: center; gap: 10px; margin-top: 26px; padding: 13px 18px; border: 1px solid rgba(255,255,255,.68); border-radius: 12px; background: rgba(255,255,255,.1); color: #fff; font-weight: 650; transition: background .2s ease, transform .2s ease; }
+.promo-boton:hover { transform: translateY(-2px); background: rgba(255,255,255,.19); }
+.promo-boton mat-icon { width: 19px; height: 19px; font-size: 19px; }
+.promo-numero { position: absolute; right: clamp(22px, 4vw, 48px); bottom: 30px; color: #fff; font-size: 15px; font-weight: 700; letter-spacing: .08em; }
+.promo-numero i { color: #b0adba; font-style: normal; font-weight: 400; }
+.promo-progreso { position: absolute; bottom: 0; left: 0; display: flex; width: 100%; height: 4px; }
+.promo-progreso span { flex: 1; background: rgba(255,255,255,.14); }
+.promo-progreso span:nth-child(1) { animation: progreso-uno 18s infinite; }
+.promo-progreso span:nth-child(2) { animation: progreso-dos 18s infinite; }
+.promo-progreso span:nth-child(3) { animation: progreso-tres 18s infinite; }
+@keyframes deslizar-promos {
+  0%, 27% { transform: translateX(0); }
+  33%, 60% { transform: translateX(-33.3333%); }
+  66%, 93% { transform: translateX(-66.6667%); }
+  99%, 100% { transform: translateX(0); }
+}
+@keyframes progreso-uno { 0%, 29% { background: #c2b4ff; } 33%, 100% { background: rgba(255,255,255,.14); } }
+@keyframes progreso-dos { 0%, 32% { background: rgba(255,255,255,.14); } 36%, 62% { background: #c2b4ff; } 66%, 100% { background: rgba(255,255,255,.14); } }
+@keyframes progreso-tres { 0%, 65% { background: rgba(255,255,255,.14); } 69%, 95% { background: #c2b4ff; } 99%, 100% { background: rgba(255,255,255,.14); } }
+
+.cabecera-pagina h2 { margin: 0; font: var(--mat-sys-headline-medium); }
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.campo-busqueda { flex: 1 1 260px; }
+
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.seleccion-recomendada { margin-top: 24px; }
+.seleccion-cabecera { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 22px; }
+.seleccion-cabecera h2 { margin: 7px 0 5px; font-size: clamp(24px, 3vw, 32px); letter-spacing: -.03em; }
+.seleccion-cabecera p { margin: 0; color: #aaa8b8; }
+.seleccion-etiqueta { color: #b9aaff; font-size: 11px; font-weight: 700; letter-spacing: .16em; }
+.seleccion-cabecera > a { flex: none; }
+.recomendaciones { grid-template-columns: repeat(auto-fill, minmax(245px, 1fr)); gap: 18px; }
+.recomendacion { overflow: hidden; border: 1px solid #343245; border-radius: 16px; background: linear-gradient(160deg, #1b1a25, #14141b); transition: transform .2s ease, border-color .2s ease; }
+.recomendacion:hover { transform: translateY(-3px); border-color: #777091; }
+.recomendacion > img { display: block; width: 100%; aspect-ratio: 460 / 215; object-fit: cover; background: #242330; }
+.recomendacion-contenido { padding: 16px; }
+.recomendacion-meta { display: flex; justify-content: space-between; gap: 8px; color: #b7aaff; font-size: 12px; }
+.recomendacion h3 { margin: 9px 0 7px; font-size: 18px; }
+.recomendacion p { min-height: 62px; margin: 0; color: #aaa8b8; font-size: 13px; line-height: 1.55; }
+.recomendacion a { margin: 12px 0 0 -8px; color: #d2c9ff; }
+.nota-demo { margin: 18px 0 0; color: #858391; font-size: 12px; }
+
+@media (max-width: 600px) {
+  .promocion-ventana { height: 390px; border-radius: 18px; }
+  .promocion-slide { align-items: flex-end; padding: 24px 20px 52px; background-position: center, 62% center; }
+  .slide-aventura { background-image: linear-gradient(0deg, #111019 0%, rgba(17,16,25,.92) 48%, rgba(17,16,25,.3) 100%), url('https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg'); }
+  .slide-accion { background-image: linear-gradient(0deg, #111019 0%, rgba(17,16,25,.92) 48%, rgba(17,16,25,.3) 100%), url('https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg'); }
+  .slide-ofertas { background-image: linear-gradient(0deg, #111019 0%, rgba(17,16,25,.92) 48%, rgba(17,16,25,.3) 100%), url('https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg'); }
+  .promo-contenido h1 { margin-top: 16px; }
+  .promo-numero { right: 20px; bottom: 18px; }
+  .seleccion-cabecera { align-items: flex-start; flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promocion-pista, .promo-progreso span { animation: none; }
+  .promocion-slide:not(:first-child) { display: none; }
+}

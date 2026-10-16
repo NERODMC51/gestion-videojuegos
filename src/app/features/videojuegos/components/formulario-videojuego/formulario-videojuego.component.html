@@ -1,0 +1,59 @@
+<form [formGroup]="formulario" (ngSubmit)="enviar()" class="formulario" novalidate>
+  <mat-form-field appearance="outline" class="completo">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="nombre" maxlength="80" />
+    <mat-error>{{ mensajeError('nombre') }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Género</mat-label>
+    <mat-select formControlName="genero">
+      @for (genero of generos; track genero) {
+        <mat-option [value]="genero">{{ genero }}</mat-option>
+      }
+    </mat-select>
+    <mat-error>{{ mensajeError('genero') }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Plataforma</mat-label>
+    <mat-select formControlName="plataforma">
+      @for (plataforma of plataformas; track plataforma) {
+        <mat-option [value]="plataforma">{{ plataforma }}</mat-option>
+      }
+    </mat-select>
+    <mat-error>{{ mensajeError('plataforma') }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Precio (USD)</mat-label>
+    <input matInput type="number" step="0.01" formControlName="precio" />
+    <mat-error>{{ mensajeError('precio') }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Fecha de lanzamiento</mat-label>
+    <input matInput type="date" formControlName="fechaLanzamiento" />
+    <mat-error>{{ mensajeError('fechaLanzamiento') }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="completo">
+    <mat-label>URL de la imagen de portada</mat-label>
+    <input matInput type="url" formControlName="imagen" placeholder="https://..." />
+    <mat-error>{{ mensajeError('imagen') }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="completo">
+    <mat-label>Descripción</mat-label>
+    <textarea matInput rows="4" formControlName="descripcion" maxlength="500"></textarea>
+    <mat-hint align="end">{{ formulario.controls.descripcion.value.length }} / 500</mat-hint>
+    <mat-error>{{ mensajeError('descripcion') }}</mat-error>
+  </mat-form-field>
+
+  <div class="botones completo">
+    <button mat-button type="button" (click)="cancelar.emit()">Cancelar</button>
+    <button mat-flat-button type="submit" [disabled]="guardando()">
+      {{ guardando() ? 'Guardando...' : 'Guardar videojuego' }}
+    </button>
+  </div>
+</form>

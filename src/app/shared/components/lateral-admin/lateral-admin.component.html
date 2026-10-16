@@ -1,0 +1,10 @@
+<aside class="admin-rail" aria-label="Acceso rápido de administración">
+  <a class="admin-rail-tirador" routerLink="/admin" aria-label="Volver al panel de administración" title="Volver al panel de administración"></a>
+  <nav class="admin-rail-menu" aria-label="Navegación de administración">
+    <strong class="admin-rail-titulo">Administración</strong>
+    <a routerLink="/admin" routerLinkActive="seleccionado" [routerLinkActiveOptions]="{ exact: true }" title="Resumen"><mat-icon>space_dashboard</mat-icon><span>Resumen</span></a>
+    <a routerLink="/videojuegos" routerLinkActive="seleccionado" [routerLinkActiveOptions]="{ exact: true }" title="Catálogo editable"><mat-icon>sports_esports</mat-icon><span>Catálogo editable</span></a>
+    <a routerLink="/videojuegos/nuevo" routerLinkActive="seleccionado" title="Agregar videojuego"><mat-icon>add_circle_outline</mat-icon><span>Agregar videojuego</span></a>
+    <a routerLink="/ofertas" routerLinkActive="seleccionado" title="Ofertas externas"><mat-icon>open_in_new</mat-icon><span>Ofertas externas</span></a>
+  </nav>
+</aside>

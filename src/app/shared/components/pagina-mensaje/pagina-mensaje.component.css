@@ -1,0 +1,12 @@
+.contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-top: 96px;
+  text-align: center;
+}
+
+mat-icon { width: 64px; height: 64px; font-size: 64px; color: var(--mat-sys-primary); }
+h1 { margin: 0; font: var(--mat-sys-headline-medium); }
+p { margin: 0 0 12px; color: var(--mat-sys-on-surface-variant); }

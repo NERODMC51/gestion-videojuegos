@@ -1,0 +1,20 @@
+<section class="pagina estrecha">
+  <header class="cabecera-pagina">
+    <h1>{{ esEdicion ? 'Editar videojuego' : 'Agregar videojuego' }}</h1>
+  </header>
+
+  @if (estado$ | async; as estado) {
+    @if (estado.cargando) {
+      <app-mensaje-estado tipo="cargando" texto="Cargando datos del videojuego..." />
+    } @else if (estado.error) {
+      <app-mensaje-estado tipo="error" [texto]="estado.error" />
+    } @else {
+      <app-formulario-videojuego
+        [videojuego]="estado.datos"
+        [guardando]="guardando()"
+        (guardar)="guardar($event)"
+        (cancelar)="cancelar()"
+      />
+    }
+  }
+</section>
