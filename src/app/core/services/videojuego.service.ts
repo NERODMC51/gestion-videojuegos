@@ -22,6 +22,12 @@ function desdeApi(videojuego: VideojuegoApi): Videojuego {
   } as Videojuego;
 }
 
+function esVideojuegoValido(videojuego: VideojuegoApi): boolean {
+  const id = String(videojuego.id ?? '').trim();
+  const nombre = String(videojuego.name ?? videojuego.nombre ?? '').trim();
+  return id.length > 0 && nombre.length > 0 && !/^\d+$/.test(nombre);
+}
+
 function haciaApi(videojuego: DatosVideojuego, id: IdVideojuego): Record<string, unknown> {
   const { nombre, ...datos } = videojuego;
   return { ...datos, id, name: nombre };
@@ -35,7 +41,9 @@ export class VideojuegoService {
 
   obtenerVideojuegos(): Observable<Videojuego[]> {
     return this.ejecutar(() =>
-      this.http.get<VideojuegoApi[]>(this.url).pipe(map((juegos) => juegos.map(desdeApi))),
+      this.http
+        .get<VideojuegoApi[]>(this.url)
+        .pipe(map((juegos) => juegos.filter(esVideojuegoValido).map(desdeApi))),
     );
   }
 
@@ -75,3 +83,4 @@ export class VideojuegoService {
     return ejecutarPeticion(this.url, MENSAJE_API_SIN_CONFIGURAR, peticion);
   }
 }
+
