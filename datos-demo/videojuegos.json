@@ -1,74 +1,326 @@
 [
   {
-    "nombre": "Cyberpunk 2077",
-    "genero": "RPG",
+    "nombre": "Resident Evil 0",
+    "genero": "Terror",
     "plataforma": "PC",
-    "precio": 59.99,
-    "imagen": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
-    "descripcion": "Rol de acción en mundo abierto ambientado en Night City, una metrópolis obsesionada con el poder y la modificación corporal.",
-    "fechaLanzamiento": "2020-12-10"
+    "precio": 19.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/339340/header.jpg?t=1768953920",
+    "descripcion": "Juego para PC de la serie Resident Evil, publicado en Steam.",
+    "fechaLanzamiento": "2016-01-19"
   },
   {
-    "nombre": "The Witcher 3: Wild Hunt",
+    "nombre": "UNCHARTED™: Colección Legado de los Ladrones",
+    "genero": "Aventura",
+    "plataforma": "PlayStation",
+    "precio": 49.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1659420/header_spanish.jpg?t=1779309472",
+    "descripcion": "UNCHARTED: Colección Legado de los Ladrones ofrece la forma definitiva de disfrutar de dos de las aventuras más emocionantes del galardonado estudio Naughty Dog, remasterizadas con mejoras específicas para PC.",
+    "fechaLanzamiento": "2022-10-19"
+  },
+  {
+    "nombre": "Resident Evil 2",
+    "genero": "Terror",
+    "plataforma": "PlayStation",
+    "precio": 39.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/883710/header.jpg?t=1779433152",
+    "descripcion": "Juego para PC de la serie Resident Evil, publicado en Steam.",
+    "fechaLanzamiento": "2019-01-24"
+  },
+  {
+    "nombre": "The Witcher 3: Wild Hunt — Remastered",
     "genero": "RPG",
+    "plataforma": "Nintendo Switch",
+    "precio": 49.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/7157bc74e5fe3f48ab007b18a3d043009d877ec4/header_alt_assets_1_spanish.jpg?t=1790845156",
+    "descripcion": "The Witcher 3: Wild Hunt — Remastered moderniza el célebre título de rol con multitud de mejoras. En la piel de Geralt de Rivia, cazador de monstruos a sueldo, recorre a tus anchas un tétrico mundo a rebosar de fantasía épica en busca de Ciri, tu hija adoptiva.",
+    "fechaLanzamiento": "2015-05-18"
+  },
+  {
+    "nombre": "Resident Evil 4",
+    "genero": "Terror",
     "plataforma": "Xbox",
     "precio": 39.99,
-    "imagen": "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg",
-    "descripcion": "Encarná a Geralt de Rivia, un cazador de monstruos, y recorrí un enorme mundo abierto lleno de misiones y decisiones.",
-    "fechaLanzamiento": "2015-05-19"
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2050650/header.jpg?t=1772502922",
+    "descripcion": "Juego para PC de la serie Resident Evil, publicado en Steam.",
+    "fechaLanzamiento": "2023-03-23"
   },
   {
-    "nombre": "Elden Ring",
-    "genero": "Acción",
+    "nombre": "ELDEN RING",
+    "genero": "RPG",
+    "plataforma": "Xbox",
+    "precio": 59.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg?t=1790290043",
+    "descripcion": "EL NUEVO JUEGO DE ROL Y ACCIÓN DE AMBIENTACIÓN FANTÁSTICA. Álzate, Sinluz, y que la gracia te guíe para abrazar el poder del Círculo de Elden y encumbrarte como señor del Círculo en las Tierras Intermedias.",
+    "fechaLanzamiento": "2022-02-24"
+  },
+  {
+    "nombre": "Cyberpunk 2077",
+    "genero": "RPG",
     "plataforma": "PlayStation",
     "precio": 59.99,
-    "imagen": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg",
-    "descripcion": "Aventura de acción y rol en un mundo abierto desafiante, con combates exigentes y exploración libre.",
-    "fechaLanzamiento": "2022-02-25"
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/e9047d8ec47ae3d94bb8b464fb0fc9e9972b4ac7/header.jpg?t=1784714077",
+    "descripcion": "Cyberpunk 2077 es un RPG de aventura y acción de mundo abierto ambientado en el futuro sombrío de Night City, una peligrosa megalópolis obsesionada con el poder, el glamur y las incesantes modificaciones corporales.",
+    "fechaLanzamiento": "2020-12-09"
+  },
+  {
+    "nombre": "Sid Meier’s Civilization® VI",
+    "genero": "Estrategia",
+    "plataforma": "Nintendo Switch",
+    "precio": 59.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/289070/header.jpg?t=1784651829",
+    "descripcion": "Expande tu imperio, haz avanzar tu cultura y enfréntate a los mejores líderes de la historia. ¿Podrá tu civilización superar la prueba del tiempo?",
+    "fechaLanzamiento": "2016-10-20"
+  },
+  {
+    "nombre": "Age of Empires II: Definitive Edition",
+    "genero": "Estrategia",
+    "plataforma": "Xbox",
+    "precio": 34.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/813780/header.jpg?t=1790623375",
+    "descripcion": "Age of Empires II: Definitive Edition incluye &quot;Los últimos khanes&quot;, que incorpora 3 campañas y 4 civilizaciones nuevas. Las frecuentes actualizaciones contienen eventos, contenido adicional, nuevos modos de juego (¡como el reciente modo cooperativo!) y funciones mejoradas.",
+    "fechaLanzamiento": "2019-11-14"
+  },
+  {
+    "nombre": "Resident Evil Village",
+    "genero": "Terror",
+    "plataforma": "PC",
+    "precio": 39.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1196590/header.jpg?t=1776927117",
+    "descripcion": "Juego para PC de la serie Resident Evil, publicado en Steam.",
+    "fechaLanzamiento": "2021-05-06"
+  },
+  {
+    "nombre": "XCOM® 2",
+    "genero": "Estrategia",
+    "plataforma": "PlayStation",
+    "precio": 19.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/268500/header.jpg?t=1772813016",
+    "descripcion": "XCOM 2 es la secuela de XCOM: Enemy Unknown, el galardonado juego de estrategia. Han pasado veinte años desde que la humanidad perdió la guerra contra los invasores alienígenas y hay un nuevo orden en la Tierra. Tras años escondidos en la sombra, las fuerzas XCOM deben alzarse y eliminar la ocupación alienígena.",
+    "fechaLanzamiento": "2016-02-04"
+  },
+  {
+    "nombre": "DIRT 5",
+    "genero": "Carreras",
+    "plataforma": "PlayStation",
+    "precio": 59.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1038250/header.jpg?t=1777484267",
+    "descripcion": "Suéltate en DIRT 5: la experiencia todoterreno más audaz de todos los tiempos, con un modo Carrera plagado de estrellas, pantalla dividida para cuatro jugadores, innovadores modos en línea, editor de diseños distintivos y mucho más.",
+    "fechaLanzamiento": "2020-11-05"
+  },
+  {
+    "nombre": "PAC-MAN WORLD Re-PAC",
+    "genero": "Plataformas",
+    "plataforma": "PlayStation",
+    "precio": 29.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1859470/header.jpg?t=1708327445",
+    "descripcion": "¡PAC-MAN llega a casa por su cumpleaños y descubre que los fantasmas han secuestrado a su familia y a sus amigos, y han arruinado la fiesta! Para rescatarlos, PAC-MAN pone rumbo a la Isla Fantasma.",
+    "fechaLanzamiento": "2022-08-25"
+  },
+  {
+    "nombre": "Need for Speed™ Heat",
+    "genero": "Carreras",
+    "plataforma": "PC",
+    "precio": 69.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222680/header.jpg?t=1777414224",
+    "descripcion": "No pares por el día y arriésgalo todo por la noche en Need for Speed™ Heat Deluxe Edition, un juego de carreras callejeras dinámico donde los límites de la ley se desvanecen cuando empieza a anochecer.",
+    "fechaLanzamiento": "2020-06-04"
+  },
+  {
+    "nombre": "The Sims™ 4",
+    "genero": "Simulación",
+    "plataforma": "PlayStation",
+    "precio": 0.0,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222670/header.jpg?t=1790028362",
+    "descripcion": "Disfruta del poder de crear y controlar a personas en un mundo virtual donde no hay reglas. ¡Ejerce tu poder con total libertad, diviértete y juega a la vida!",
+    "fechaLanzamiento": "2020-06-18"
+  },
+  {
+    "nombre": "Stardew Valley",
+    "genero": "Simulación",
+    "plataforma": "Nintendo Switch",
+    "precio": 14.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/413150/header.jpg?t=1786554168",
+    "descripcion": "Acabas de heredar la vieja parcela agrícola de tu abuelo de Stardew Valley. Decides partir hacia una nueva vida con unas herramientas usadas y algunas monedas. ¿Te ves capaz de vivir de la tierra y convertir estos campos descuidados en un hogar próspero?",
+    "fechaLanzamiento": "2016-02-26"
+  },
+  {
+    "nombre": "Rayman® Legends",
+    "genero": "Plataformas",
+    "plataforma": "Nintendo Switch",
+    "precio": 29.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242550/baa48d04ecc914d5f193550c640c8450ddf67065/header.jpg?t=1792072424",
+    "descripcion": "Corre, salta y golpea por los coloridos mundos del Claro de los Sueños en esta galardonada aventura de plataformas. Enfréntate a jefes épicos y forma equipo con hasta 4 jugadores en el modo cooperativo local.",
+    "fechaLanzamiento": "2013-09-03"
+  },
+  {
+    "nombre": "Planet Zoo",
+    "genero": "Simulación",
+    "plataforma": "Xbox",
+    "precio": 44.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/703080/header.jpg?t=1765896213",
+    "descripcion": "Crea un mundo de vida salvaje en Planet Zoo. De los desarrolladores de Planet Coaster y Zoo Tycoon, llega el simulador de zoológicos definitivo. Construye detallados hábitats, gestiona tu zoo y conoce auténticos animales vivos que observan, sienten y exploran el mundo que tú generes a su alrededor.",
+    "fechaLanzamiento": "2019-11-05"
+  },
+  {
+    "nombre": "Mortal Kombat 11",
+    "genero": "Acción",
+    "plataforma": "Nintendo Switch",
+    "precio": 49.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/976310/header.jpg?t=1780429525",
+    "descripcion": "Mortal Kombat ha regresado mejor que nunca en esta entrega de la icónica saga.",
+    "fechaLanzamiento": "2019-04-23"
   },
   {
     "nombre": "Hades",
     "genero": "Indie",
     "plataforma": "Nintendo Switch",
     "precio": 24.99,
-    "imagen": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg",
-    "descripcion": "Juego de acción tipo roguelike en el que escapás del inframundo griego con combates rápidos y mucha rejugabilidad.",
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145360/header.jpg?t=1758127023",
+    "descripcion": "Desafía al dios de los muertos y protagoniza una salvaje fuga del Inframundo en este juego de exploración de mazmorras de los creadores de Bastion, Transistor y Pyre.",
     "fechaLanzamiento": "2020-09-17"
   },
   {
-    "nombre": "Stardew Valley",
-    "genero": "Simulación",
+    "nombre": "Mortal Kombat 1",
+    "genero": "Acción",
+    "plataforma": "Nintendo Switch",
+    "precio": 49.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1971870/header.jpg?t=1778795130",
+    "descripcion": "Descubre un nuevo universo de Mortal Kombat™creado por Liu Kang, Dios del Fuego. ¡Mortal Kombat™ 1 abre paso a una nueva era de esta icónica saga con un nuevo sistema de kombate, modos de juego y fatalities!",
+    "fechaLanzamiento": "2023-09-19"
+  },
+  {
+    "nombre": "Counter-Strike 2",
+    "genero": "Acción",
     "plataforma": "PC",
-    "precio": 14.99,
-    "imagen": "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/header.jpg",
-    "descripcion": "Heredás una granja abandonada: cultivá, criá animales, pescá y conocé a los habitantes del pueblo a tu ritmo.",
-    "fechaLanzamiento": "2016-02-26"
+    "precio": 0.0,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/730/162664aa5da85f418105350c5d67ca565f6c3713/header.jpg?t=1791824795",
+    "descripcion": "Durante las dos últimas décadas, Counter‑Strike ha proporcionado una experiencia competitiva de primer nivel para los millones de jugadores de todo el mundo que contribuyeron a darle forma. Ahora el próximo capítulo en la historia de CS está a punto de comenzar. Hablamos de Counter‑Strike 2.",
+    "fechaLanzamiento": "2012-08-21"
+  },
+  {
+    "nombre": "Devil May Cry 5",
+    "genero": "Acción",
+    "plataforma": "PlayStation",
+    "precio": 29.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/601150/header.jpg?t=1790215341",
+    "descripcion": "El cazademonios definitivo vuelve con estilo en el juego que los fans de la acción estaban esperando.",
+    "fechaLanzamiento": "2019-03-07"
+  },
+  {
+    "nombre": "Grand Theft Auto V Enhanced",
+    "genero": "Aventura",
+    "plataforma": "Xbox",
+    "precio": 44.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3240220/header.jpg?t=1781187782",
+    "descripcion": "Disfruta de los superventas del entretenimiento Grand Theft Auto V y Grand Theft Auto Online, ahora mejorados para una nueva generación, con impresionantes gráficos, carga más rápida, audio 3D y mucho más, además de contenido exclusivo para los jugadores de GTA Online.",
+    "fechaLanzamiento": "2025-03-04"
   },
   {
     "nombre": "Hollow Knight",
-    "genero": "Plataformas",
-    "plataforma": "Nintendo Switch",
+    "genero": "Indie",
+    "plataforma": "PlayStation",
     "precio": 14.99,
-    "imagen": "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/header.jpg",
-    "descripcion": "Aventura de exploración en 2D por un reino subterráneo de insectos y ruinas, con jefes difíciles y arte dibujado a mano.",
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/367520/3c3489495136b26b34f8a9543c7f5645b99d388c/header.jpg?t=1776125684",
+    "descripcion": "¡Forja tu propio camino en Hollow Knight! Una aventura épica a través de un vasto reino de insectos y héroes que se encuentra en ruinas. Explora cavernas tortuosas, combate contra criaturas corrompidas y entabla amistad con extraños insectos, todo en un estilo clásico en 2D dibujado a mano.",
     "fechaLanzamiento": "2017-02-24"
   },
   {
+    "nombre": "Far Cry® 5",
+    "genero": "Aventura",
+    "plataforma": "PC",
+    "precio": 59.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/552520/0dbbd22689fafc2b5b86996257a8e115ff935e81/header.jpg?t=1785365694",
+    "descripcion": "Enfréntate a una secta de fanáticos en este shooter en primera persona de mundo abierto. Libra combates intensos en territorio hostil, recluta a seguidores leales y aliados animales, y libera el condado de Hope en solitario o en cooperativo para 2 jugadores.",
+    "fechaLanzamiento": "2018-03-26"
+  },
+  {
     "nombre": "Celeste",
-    "genero": "Plataformas",
-    "plataforma": "PlayStation",
+    "genero": "Indie",
+    "plataforma": "Xbox",
     "precio": 19.99,
-    "imagen": "https://cdn.cloudflare.steamstatic.com/steam/apps/504230/header.jpg",
-    "descripcion": "Plataformas de precisión en el que ayudás a Madeline a escalar una montaña, con una historia sobre superación personal.",
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/504230/header.jpg?t=1714089525",
+    "descripcion": "Ayuda a Madeline a sobrevivir a los demonios de su interior en su viaje hasta la cima de la montaña Celeste, en este ajustadísimo plataforma, obra de los creadores de TowerFall. Enfréntate a cientos de desafíos diseñados a mano, devela retorcidos secretos y, y reconstruye el misterio de la montaña.",
     "fechaLanzamiento": "2018-01-25"
   },
   {
-    "nombre": "Portal 2",
-    "genero": "Aventura",
+    "nombre": "Crash Bandicoot™ N. Sane Trilogy",
+    "genero": "Plataformas",
+    "plataforma": "Xbox",
+    "precio": 39.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/731490/header.jpg?t=1742399696",
+    "descripcion": "¡Vuelve Crash Bandicoot™, tu marsupial favorito! Mejorado, embelesado y listo para bailar con la colección de juegos La trilogía. Revive tus momentos favoritos con Crash Bandicoot™, Crash Bandicoot™ 2: Cortex Strikes Back y Crash Bandicoot™ 3: Warped, ¡con gráficos remasterizados en toda su gloria!",
+    "fechaLanzamiento": "2018-06-29"
+  },
+  {
+    "nombre": "Battlefield 4™",
+    "genero": "Acción",
+    "plataforma": "PlayStation",
+    "precio": 39.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1238860/header.jpg?t=1777391884",
+    "descripcion": "Domina en Battlefield con los extras Premium",
+    "fechaLanzamiento": "2020-06-11"
+  },
+  {
+    "nombre": "EA SPORTS FC™ 26",
+    "genero": "Deportes",
+    "plataforma": "PlayStation",
+    "precio": 69.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3405690/2d96aa1b06e453cd62dae9029d412f19e61932c3/header.jpg?t=1789751159",
+    "descripcion": "Vive The World's Game como nunca antes en EA SPORTS FC™ 26. Alcanza la gloria en un modo de torneo internacional de 48 equipos, afronta desafíos de Mánager en vivo temáticos y entra en Carrera de futbolista con nuevos ICONOS y Héroes internacionales.",
+    "fechaLanzamiento": "2025-09-25"
+  },
+  {
+    "nombre": "Call of Duty®: WWII",
+    "genero": "Acción",
     "plataforma": "PC",
-    "precio": 9.99,
-    "imagen": "https://cdn.cloudflare.steamstatic.com/steam/apps/620/header.jpg",
-    "descripcion": "Juego de puzles en primera persona basado en portales, con cooperativo para dos jugadores y mucho humor.",
-    "fechaLanzamiento": "2011-04-19"
+    "precio": 59.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/476600/header.jpg?t=1780963893",
+    "descripcion": "Call of Duty®: WWII - Una experiencia sobrecogedora que redefine la Segunda Guerra Mundial.",
+    "fechaLanzamiento": "2017-11-02"
+  },
+  {
+    "nombre": "Call of Duty®: Black Ops III",
+    "genero": "Acción",
+    "plataforma": "PlayStation",
+    "precio": 59.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/311210/header.jpg?t=1780963650",
+    "descripcion": "Call of Duty® Black Ops III: Zombies Chronicles Edition incluye el juego original completo y la expansión de contenido Zombies Chronicles.",
+    "fechaLanzamiento": "2015-11-05"
+  },
+  {
+    "nombre": "NBA 2K25",
+    "genero": "Deportes",
+    "plataforma": "Xbox",
+    "precio": 69.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2878980/header.jpg?t=1790956803",
+    "descripcion": "Conviértete en el rey de la pista con autenticidad y realismo con ProPLAY™, que te permitirá tener el control absoluto de tu juego en NBA 2K25. Define tu legado en Mi CARRERA, MyTEAM, Mi NBA y La W.",
+    "fechaLanzamiento": "2024-09-03"
+  },
+  {
+    "nombre": "eFootball™",
+    "genero": "Deportes",
+    "plataforma": "PC",
+    "precio": 0.0,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1665460/86619d0fb7126b3d5276004175f9a62181223c0f/header.jpg?t=1791424870",
+    "descripcion": "¡Diviértete con el emocionante juego de fútbol que lleva ya más de 1.000 millones de descargas! ¡Juega a eFootball™ con usuarios de todo el mundo!",
+    "fechaLanzamiento": "2021-09-29"
+  },
+  {
+    "nombre": "Forza Horizon 5",
+    "genero": "Carreras",
+    "plataforma": "Xbox",
+    "precio": 59.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551360/header.jpg?t=1788546569",
+    "descripcion": "Explora los coloridos paisajes del mundo abierto de México con una acción de conducción ilimitada y divertida en los mejores coches del mundo.",
+    "fechaLanzamiento": "2021-11-08"
+  },
+  {
+    "nombre": "Battlefield™ V",
+    "genero": "Acción",
+    "plataforma": "Xbox",
+    "precio": 49.99,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1238810/header.jpg?t=1772707365",
+    "descripcion": "Esta es la mejor experiencia de Battlefield V. Vive el mayor conflicto de la humanidad con un completo arsenal de armas, vehículos y dispositivos, y todos los contenidos de personalización de los dos primeros años.",
+    "fechaLanzamiento": "2020-10-22"
   }
 ]
